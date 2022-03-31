@@ -11,6 +11,15 @@ module.exports = {
         path: path.resolve(__dirname, 'dist') 
         //C:\Users\iii\Documents\workspace\webpack-demo\dist
     },
+    module:{
+        rules:[
+            {
+                test:/\.css$/i,
+                use:["style-loader","css-loader"]
+            }
+        ]
+
+    },
     plugins:[new HtmlWebpackPlugin({
         template:'./template.html',
         //filename:'./site.html',
