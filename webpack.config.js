@@ -16,5 +16,9 @@ module.exports = {
         //filename:'./site.html',
         abc:'webpack demo',
         inject:'body'
-    })]
+    })],
+    devServer:{
+        port:3000,
+        open:true
+    }
 }
