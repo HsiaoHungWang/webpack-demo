@@ -5,7 +5,8 @@ const path = require("path"); //node.js 內建模組，用來處理路徑的相�
 //console.log(__dirname);
 module.exports = {
     // entry: './main.js',
-    entry: './main.ts',    
+    //entry: './main.ts',    
+    entry: './main.jsx',  
     output: {
         filename: 'bundle.[chunkhash:8].js',
         //__dirname 取得程式執行位置的實際路徑        
@@ -28,12 +29,17 @@ module.exports = {
                 test:/\.tsx?$/i,
                 use:'ts-loader',
                 exclude:/node_modules/
+            },
+            {
+                test:/\.jsx?$/i,
+                use:'babel-loader',
+                exclude:/node_modules/
             }
         ]
 
     },
     resolve:{
-        extensions:['.tsx','.ts','.js']
+        extensions:['.jsx','.tsx','.ts','.js']
     },
     plugins: [
         new HtmlWebpackPlugin({
